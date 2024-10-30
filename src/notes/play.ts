@@ -35,7 +35,7 @@ export async function playSequence(
     }[],
     wholeNoteDuration: number
 ) {
-    for (let note of notesToPlay) {
+    for (const note of notesToPlay) {
         await webAudioPlay(note.buffer, wholeNoteDuration * note.timing);
     }
 }

@@ -1,4 +1,4 @@
-const NOTE_FILE_NAMES = [
+export const NOTE_FILE_NAMES = [
     "0 A.mp3",
     "0 A.Sharp.mp3",
     "0 B.mp3",
@@ -89,7 +89,7 @@ const NOTE_FILE_NAMES = [
     "8 C.mp3",
 ];
 
-console.log(NOTE_FILE_NAMES);
+// console.log(NOTE_FILE_NAMES);
 
 export const NOTE_FILES = NOTE_FILE_NAMES.map(
     (fileName) => new Audio("/notes2/" + fileName)
@@ -97,13 +97,13 @@ export const NOTE_FILES = NOTE_FILE_NAMES.map(
 
 export const audioContext = new AudioContext();
 
-export const NOTE_FILE_BUFFERS = await Promise.all(
-    NOTE_FILE_NAMES.map((value) =>
-        fetch("/notes2/" + value)
-            .then((response) => response.arrayBuffer())
-            .then((data) => audioContext.decodeAudioData(data))
-    )
-);
+// export const NOTE_FILE_BUFFERS = await Promise.all(
+//     NOTE_FILE_NAMES.map((value) =>
+//         fetch("/notes2/" + value)
+//             .then((response) => response.arrayBuffer())
+//             .then((data) => audioContext.decodeAudioData(data))
+//     )
+// );
 
 export const TONIC_SOLFA_NOTES: { [key: string]: number } = {
     Do: 0,
